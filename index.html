@@ -210,6 +210,7 @@
   /* ============ timeline ============ */
   .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}
   .two-col > .card{margin-top:0}
+  .two-col + .card{margin-top:22px}
   .tl{list-style:none;margin:0;padding:0 0 0 21px;position:relative}
   .tl::before{
     content:"";position:absolute;left:4px;top:7px;bottom:7px;width:2px;
@@ -250,7 +251,7 @@
   .award .yr{font-size:.74rem;color:var(--muted);font-weight:500;display:block;margin-top:4px}
 
   .honors{list-style:none;margin:16px 0 0;padding:16px 0 0;border-top:1px solid var(--border);
-    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px 22px}
   .honors li{font-size:.83rem;color:var(--body);line-height:1.5}
   .honors b{display:block;color:var(--ink);font-weight:600;font-size:.855rem}
   .honors .yr{font-size:.735rem;color:var(--muted)}
@@ -297,7 +298,7 @@
   @media (max-width:720px){
     body{font-size:14.5px}
     .card{padding:21px;border-radius:18px}
-    .card + .card, .two-col{margin-top:16px}
+    .card + .card, .two-col, .two-col + .card{margin-top:16px}
     .two-col{grid-template-columns:1fr;gap:16px}
     .proj-grid{grid-template-columns:1fr}
     .award-grid{grid-template-columns:1fr}
@@ -350,12 +351,6 @@
         <li><a href="https://github.com/serih0219" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.31.47-2.39 1.24-3.23-.13-.3-.54-1.53.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.63-2.8 5.65-5.48 5.95.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
           <span class="val">github.com/serih0219</span></a></li>
-        <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Z"/><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
-          <span class="val">Google Scholar</span></a></li>
-        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.75 9.25h4.46V21H2.75V9.25ZM9.5 9.25h4.28v1.6h.06c.6-1.08 2.06-2.22 4.24-2.22 4.54 0 5.38 2.82 5.38 6.5V21h-4.46v-5.1c0-1.22-.02-2.78-1.76-2.78-1.76 0-2.03 1.32-2.03 2.7V21H9.5V9.25Z"/></svg>
-          <span class="val">LinkedIn</span></a></li>
       </ul>
     </div>
   </aside>
@@ -368,14 +363,13 @@
       <p>
         I'm <strong>Serih Yu</strong>, an undergraduate student in Human-Centered AI Engineering at Sangmyung University.<br>
         My research centers on <strong>multimodal learning</strong> — connecting vision and language so that models can perceive, reason, and act.<br>
-        I'm currently a research intern at <a href="https://github.com/serih0219">DSAIL @ SKKU</a>, previously at KUAICV, Korea University.
+        I'm currently a research intern at <strong>DSAIL @ SKKU</strong>.
       </p>
       <p class="ri-label">Research Interests</p>
       <div class="pills">
         <span class="pill">Multimodal Learning</span>
         <span class="pill">Vision-Language Models</span>
         <span class="pill">Large Language Models</span>
-        <span class="pill">Vision-Language-Action Models</span>
       </div>
     </section>
 
@@ -383,7 +377,6 @@
     <section class="card">
       <div class="card-head">
         <h2 class="card-title">Publications</h2>
-        <span class="badge">1 manuscript</span>
       </div>
       <article class="pub">
         <h3>PhytoAssist: Image-based Plant Hydration Diagnosis and Adaptive Irrigation System</h3>
@@ -391,19 +384,14 @@
         <p class="venue">Manuscript completed — under submission to a peer-reviewed venue, 2026</p>
         <div class="chips">
           <span class="chip status">Under Submission</span>
-          <span class="chip pdf">PDF</span>
-          <span class="chip code">Code</span>
-          <span class="chip page">Project Page</span>
         </div>
       </article>
-      <p class="empty-note">※ 논문이 게재되면 이 카드에 항목을 추가하고, 위 칩에 실제 링크를 걸어 주세요.</p>
     </section>
 
     <!-- Projects -->
     <section class="card">
       <div class="card-head">
         <h2 class="card-title">Projects</h2>
-        <span class="badge green">5 selected</span>
       </div>
       <div class="proj-grid">
 
@@ -504,7 +492,6 @@
     <section class="card">
       <div class="card-head">
         <h2 class="card-title">Awards &amp; Honors</h2>
-        <span class="badge green">2 awards · 3 scholarships</span>
       </div>
       <div class="award-grid">
         <div class="award">
@@ -527,7 +514,6 @@
       <ul class="honors">
         <li><b>SW Talent Scholarship</b><span class="yr">Sangmyung Univ. · 2023 – 2024</span></li>
         <li><b>Academic Achievement Scholarship</b><span class="yr">Sangmyung Univ. · 2024, 2026</span></li>
-        <li><b>National Scholarship for Admission</b><span class="yr">Sangmyung Univ. · 2023</span></li>
       </ul>
     </section>
 
